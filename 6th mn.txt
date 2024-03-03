@@ -1,0 +1,31 @@
+Go to cmd > mongosh > it opens “test >”
+To Type the highlighted in the question
+1.use aimldb(my database name)
+2. show collections or create one as student or student1
+3. use student1
+4. then type highlighted one
+
+db.stud1col1.insert({srn:110,sname:"Rahul",degree:"BCA",sem:6,CGPA:7.9})
+Give 10 more inputs
+
+db.stud1col1.insertMany([
+ { srn: 110, sname: "Rahul", degree: "BCA", sem: 6, CGPA: 7.9 },
+ { srn: 111, sname: "Sara", degree: "BCA", sem: 5, CGPA: 8.5 },
+ { srn: 112, sname: "John", degree: "BBA", sem: 4, CGPA: 8.0 },
+ { srn: 113, sname: "Emma", degree: "B.Tech", sem: 7, CGPA: 7.2 },
+ { srn: 114, sname: "Mike", degree: "BCA", sem: 8, CGPA: 7.8 },
+ { srn: 115, sname: "Alice", degree: "B.Tech", sem: 6, CGPA: 8.9 },
+ { srn: 116, sname: "Tom", degree: "BCA", sem: 5, CGPA: 7.4 },
+ { srn: 117, sname: "Sophia", degree: "BBA", sem: 6, CGPA: 8.2 },
+ { srn: 118, sname: "Chris", degree: "B.Tech", sem: 4, CGPA: 6.9 },
+ { srn: 119, sname: "Eva", degree: "BCA", sem: 7, CGPA: 8.7 }
+])
+Then queries:
+1. db.stud1col1.find()
+2. db.stud1col1.find({ degree: "BCA" })
+3. db.stud1col1.find().sort({ CGPA: 1 })
+4. db.stud1col1.find().limit(5)
+5. db.stud1col1.find().skip(4).limit(3)
+6. db.stud1col1.findOne({ sname: "Rahul" }, { degree: 1, _id: 0 })
+7. db.stud1col1.find().skip(4).limit(3).sort({ CGPA: -1 })
+8. db.stud1col1.find({ degree: "BCA" }).count() 
